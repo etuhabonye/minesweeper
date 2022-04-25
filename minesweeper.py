@@ -50,7 +50,7 @@ class Minesweeper(object):
             self.state_last = np.copy(self.state)
 
 
-            self.action(5,5) #Hack alert, to start off with non empty board. Can be removed but then agent has to learn
+            # self.action(5,5) #Hack alert, to start off with non empty board. Can be removed but then agent has to learn
                              #what to do when the board starts out empty.
             print(self.mines)
 

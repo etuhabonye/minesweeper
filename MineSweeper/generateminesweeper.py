@@ -13,7 +13,7 @@ def generateMineSweeper():
     mines = game.mines
     neighbors = game.neighbors
 
-    print(board)
+    # print(board)
 
     return board, mines, neighbors
 
@@ -37,4 +37,4 @@ def boardTodf():
 
     return df
 
-print(boardTodf())
+# print(boardTodf())

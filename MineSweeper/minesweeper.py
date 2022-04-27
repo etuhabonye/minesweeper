@@ -19,7 +19,7 @@ class MineSweeper:
     def initialize(self, coordinates):
         availableCells = range(self.totalCells)
         selected = coordinates[0]*self.Y + coordinates[1]
-        offLimits = np.array([selected-self.Y-1, selected-self.Y, selected-self.Y+1, selected-1, selected, selected+1, selected+self.Y-1, selected+self.Y, selected+self.Y+1]) #y r these off limits O.o
+        offLimits = np.array([selected-self.Y-1, selected-self.Y, selected-self.Y+1, selected-1, selected, selected+1, selected+self.Y-1, selected+self.Y, selected+self.Y+1])
         availableCells = np.setdiff1d(availableCells, offLimits)
         self.nMines = np.minimum(self.nMines, len(availableCells)) #in case there are fewer remaining cells than mines to place
         minesFlattened = np.zeros([self.totalCells])

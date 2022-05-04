@@ -1,7 +1,11 @@
 '''
 Wesleyan University, COMP 343, Spring 2022
 Homework 8: Neural Network Training
+<<<<<<< HEAD
+Name: Emma Tuhabonye
+=======
 Name: Your name here!
+>>>>>>> 6c8103b8e9cc258f38bb663cd6008f8640e4d37f
 
 Important: If you modify this file, you should submit to your homework directory
 

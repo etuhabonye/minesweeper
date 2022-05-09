@@ -13,7 +13,6 @@ def generateMineSweeper():
     mines = game.mines
     neighbors = game.neighbors
 
-    # print(board)
 
     return board, mines, neighbors
 
@@ -31,10 +30,13 @@ def boardTodf():
     for l in range(len(coordList)):
         curr = coordList[l]
 
-        rows[l] = [coordList[l], board[curr[0]][curr[1]], neighbors[curr[0]][curr[1]], mines[curr[0]][curr[1]]]
+        rows[l] = [coordList[l], coordList[l][0], coordList[l][1], board[curr[0]][curr[1]], neighbors[curr[0]][curr[1]], mines[curr[0]][curr[1]]]
 
-    df = pd.DataFrame(rows, columns = ['Coordinates', 'Value', 'Neighbors', 'Safe'])
+    df = pd.DataFrame(rows, columns = ["Coordinates", 'Xcord', 'Ycord', 'Value', 'Neighbors', 'Safe'])
 
     return df
 
-# print(boardTodf())
+
+
+print(boardTodf())
+

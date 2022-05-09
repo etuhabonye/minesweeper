@@ -9,13 +9,31 @@ import time
 # Project modules
 import util
 from generateminesweeper import *
+
 class Game:
+
     def guess(self, position):
-        pass 
+        if not self.guessed and pos in self.mines:
+            # If the first guess was unlucky then move the mine.
+            while pos in self.mines:
+                self.mines.remove(pos)
+                self.add_mines(1)
+        if pos in self.mines:
+            return True
+        if pos in self.guessed:
+            return None
+        self.spread(pos)
+        return False
+
     def is_won(self):
-        pass 
+        return len(self.guessed) + len(self.mines) == self.height * self.width
+
     def view(self):
-        pass 
+        '''machine readable representation of what's seen'''
+        result = np.zeros((self.height, self.width), dtype=np.int8) + 9
+        for (i, j) in self.guessed:
+            result[i, j] = self.count_nearby_mines((i, j))
+        return result
 
 class Player:
     #this implements the game player
@@ -56,23 +74,6 @@ class Player:
         pred = predict(game_input)[0]
         pred[view.flatten()!=9]=1
         return pred
-
-
-class ModelBatchResults:
-    '''The result of training the model on one batch. '''
-    def __init__(self, loss, precision, recall, accuracy):
-        pass 
-
-
-
-
-
-
-
-
-
-
-
 
 
 class NeuralNetwork:

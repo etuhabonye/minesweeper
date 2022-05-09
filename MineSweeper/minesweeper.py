@@ -11,7 +11,7 @@ class MineSweeper:
         self.mines = np.zeros([self.X, self.Y])
         self.neighbors = np.zeros([self.X, self.Y])
         self.state = np.zeros([self.X, self.Y])
-        self.state.fill(np.nan)
+        self.state.fill(-1)
         self.initialized = False
         self.gameOver = False
         self.victory = False
@@ -47,7 +47,7 @@ class MineSweeper:
                 if x + i >= 0 and x + i < self.X:
                     for j in range(-1, 2):
                         if y + j >= 0 and y + j < self.Y:
-                            if np.isnan(self.state[x + i, y + j]):
+                            if (self.state[x + i, y + j]) < 0:
                                 self.clearEmptyCell((x + i, y + j))
     def selectCell(self, coordinates):
         self.initialize(coordinates)

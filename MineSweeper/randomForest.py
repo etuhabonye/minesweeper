@@ -338,6 +338,7 @@ cm_matrix = pd.DataFrame(data=cm, columns=['Actual Positive:1', 'Actual Negative
                                  index=['Predict Positive:1', 'Predict Negative:0'])
 
 sns.heatmap(cm_matrix, annot=True, fmt='d', cmap='YlGnBu')
+plt.show()
 
 TP = cm[0,0]
 TN = cm[1,1]

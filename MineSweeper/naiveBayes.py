@@ -5,7 +5,7 @@ import generateminesweeper
 target = "Safe"
 features = {"Xcord", "Ycord", "Value", "Neighbors"}
 
-df = generateminesweeper.boardTodf()
+df, df2 = generateminesweeper.boardTodf()
 
 X = df[features]
 Y = df[target]
@@ -28,11 +28,10 @@ classifer.fit(X_train, Y_train)
 # testing the model
 y_pred = classifer.predict(X)
 
-df2 = generateminesweeper.boardTodf()
+# df2 = generateminesweeper.boardTodf()
 
 X2 = df2[features]
 y_pred2 = classifer.predict(X2)
 df2["Predicted"] = y_pred2
 
 print(df2)
-

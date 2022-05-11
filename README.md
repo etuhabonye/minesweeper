@@ -1,3 +1,4 @@
 # minesweeper
-![alt text](https://github.com/etuhabonye/minesweeper/randomForest_cm.png?raw=true)
-![Screenshot](randomForest_cm.png)
+![Random Forest Confusion Matrix](randomForest_cm.png)
+![Naive Bayes Confusion Matrix](naiveBayes_cm.png)
+
